@@ -276,7 +276,3 @@ section {
   50% { box-shadow: 0 0 0 10px rgba(217,119,6,0.25); }
 }
 .pulse-highlight { animation: attentionPulse 0.9s ease-in-out 2; }
-
-.corrugated {
-  background-image: repeating-linear-gradient(100deg, rgba(247,243,236,0.05) 0px, rgba(247,243,236,0.05) 2px, transparent 2px, transparent 18px);
-}
