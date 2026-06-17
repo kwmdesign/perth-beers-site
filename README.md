@@ -1,21 +1,24 @@
 # Perth Beers
 
-A one-page craft beer guide for Western Australia. Static site — no build step, no server-side code.
+A one-page craft beer guide for Western Australia. Static site — no server-side code. Tailwind's utility classes are precompiled to a static stylesheet (no runtime CDN, no in-browser compiling).
 
 ## Structure
 
 ```
 perth-beers/
-├── index.html        ← page markup
+├── index.html            ← page markup
 ├── css/
-│   └── styles.css    ← custom component styles, animations, textures
+│   ├── tailwind.css      ← precompiled Tailwind utilities (generated — don't hand-edit)
+│   └── styles.css        ← custom component styles, animations, textures
 ├── js/
-│   └── main.js        ← mobile menu, tabs, map tooltips, stat counters, form
-├── assets/             ← put any images/icons here as you add them
+│   └── main.js            ← mobile menu, tabs, map tooltips, stat counters, form
+├── assets/                 ← put any images/icons here as you add them
+├── tailwind.config.js    ← Tailwind theme (custom colours/fonts) — used only when rebuilding
+├── tailwind-input.css     ← the 3-line @tailwind source file — used only when rebuilding
 └── README.md
 ```
 
-Tailwind's utility classes (`bg-roast`, `grid`, `text-sand`, etc.) are loaded from a CDN and compiled in the browser, so you won't find a `tailwind.config.js` here — the small config object lives in a `<script>` tag in `index.html`'s `<head>`, right after the CDN `<script>` tag. That's intentional: Tailwind's in-browser compiler needs it there to pick up the custom colours (`roast`, `sand`, `rust`) and fonts. Everything else — buttons, cards, tabs, the pulse animation, the corrugated-iron texture — is hand-written plain CSS in `css/styles.css`.
+Tailwind's utility classes (`bg-roast`, `grid`, `text-sand`, etc.) used to load from `cdn.tailwindcss.com` and compile in the browser on every page load. That's fine for prototyping, but Tailwind itself warns it's not meant for production — it ships the whole compiler to every visitor and prints a console warning. `css/tailwind.css` is now a one-time, precompiled, minified file containing only the utility classes this page actually uses, generated with the Tailwind CLI. `tailwind.config.js` and `tailwind-input.css` are the *source* for that build — you don't need them to run the site, only to rebuild `css/tailwind.css` after a change (see below). Everything else — buttons, cards, tabs, the pulse animation, the corrugated-iron texture, the trail-stop timeline — is still hand-written plain CSS in `css/styles.css`.
 
 ## Editing locally
 
@@ -53,6 +56,18 @@ Each time you edit a file locally:
 2. Reconnect in FileZilla and drag over just the file(s) you changed — FileZilla will prompt to overwrite, that's expected.
 
 You don't need to re-upload everything each time, only what changed. If you ever add new images, drop them in `assets/` and reference them in `index.html` as `assets/your-image.jpg`.
+
+## If you add a new Tailwind class
+
+This is the one gotcha the old CDN setup didn't have: `css/tailwind.css` only contains the utility classes that existed in `index.html` at build time. If you edit `index.html` and add a Tailwind class that wasn't already used somewhere on the page — say a new `bg-teal-700` or `lg:gap-20` — it will silently do nothing, because that rule doesn't exist in the compiled file yet.
+
+To rebuild, with Node installed:
+
+```
+npx tailwindcss -i tailwind-input.css -o css/tailwind.css -c tailwind.config.js --minify
+```
+
+Run that from inside the `perth-beers` folder, then re-upload the updated `css/tailwind.css` via FileZilla. If you don't want to deal with Node locally, paste your changed `index.html` to Claude and ask it to rebuild the stylesheet — that's a quick, mechanical step.
 
 ## Version history (optional but recommended)
 

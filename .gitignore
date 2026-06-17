@@ -6,6 +6,10 @@ Thumbs.db
 .vscode/
 *.swp
 
+# Node (only present locally if you run the Tailwind rebuild step)
+node_modules/
+package-lock.json
+
 # Never commit credentials
 *credentials*
 *secrets*
