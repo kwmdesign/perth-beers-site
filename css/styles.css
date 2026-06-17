@@ -31,7 +31,7 @@ section {
   gap: 0.5rem;
   background-color: #F59E0B;
   color: #1B1A18;
-  font-family: "Big Shoulders Text", sans-serif;
+  font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.025em;
@@ -54,7 +54,7 @@ section {
   background: transparent;
   border: 2px solid rgba(247,243,236,0.3);
   color: #F7F3EC;
-  font-family: "Big Shoulders Text", sans-serif;
+  font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.025em;
@@ -88,7 +88,7 @@ section {
 /* ---------- Brewery Trail tabs ---------- */
 .tab-btn {
   padding: 0.5rem 0.875rem;
-  font-family: "Big Shoulders Text", sans-serif;
+  font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.025em;
@@ -142,7 +142,7 @@ section {
 
 /* ---------- Misc components ---------- */
 .eyebrow {
-  font-family: "Big Shoulders Text", sans-serif;
+  font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.2em;

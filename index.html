@@ -8,9 +8,9 @@
 <meta name="theme-color" content="#1B1A18">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1A18'/%3E%3Cpath d='M10 10h10v2.5h1.5a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H20v2a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 10 22V10z' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3Cpath d='M20 13.5h1a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-1' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Big+Shoulders+Text:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- General Sans + Excon are Fontshare fonts, not Google Fonts — served from Fontshare's own CDN -->
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&f[]=excon@400,500,600&display=swap" rel="stylesheet">
 
 <!-- Tailwind CDN (zero-build utility classes, compiled in the browser) -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -28,9 +28,9 @@
           rust:  { 500: '#A8542E', 600: '#8B3F22' }
         },
         fontFamily: {
-          display: ['"Big Shoulders Display"', 'sans-serif'],
-          text: ['"Big Shoulders Text"', 'sans-serif'],
-          body: ['Manrope', 'sans-serif']
+          display: ['"General Sans"', 'sans-serif'],
+          text: ['"General Sans"', 'sans-serif'],
+          body: ['Excon', 'sans-serif']
         }
       }
     }
@@ -49,7 +49,7 @@
 <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-sand/85 border-b border-roast/10 transition-shadow duration-300">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="h-16 md:h-20 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2 font-display font-black text-xl md:text-2xl tracking-tight text-roast">
+      <a href="#home" class="flex items-center gap-2 font-display font-bold text-xl md:text-2xl tracking-tight text-roast">
         <i data-lucide="beer" class="w-7 h-7 text-amber-600"></i>
         PERTH&nbsp;<span class="text-amber-600">BEERS</span>
       </a>
@@ -95,7 +95,7 @@
       <div class="relative z-10">
         <p class="eyebrow text-amber-400 mb-5">Western Australia · Craft Beer Guide</p>
 
-        <h1 class="font-display font-black text-sand text-[2.75rem] sm:text-6xl lg:text-[4.6rem] leading-[0.95] tracking-tight mb-6">
+        <h1 class="font-display font-bold text-sand text-[2.75rem] sm:text-6xl lg:text-[4.6rem] leading-[0.95] tracking-tight mb-6">
           Sun, Sand, and<br class="hidden sm:block">
           Exceptional
           <span class="relative inline-block text-amber-400">
@@ -122,21 +122,21 @@
         <dl id="statsRow" class="flex flex-wrap gap-x-9 gap-y-5 pt-7 border-t border-sand/15">
           <div>
             <dt class="sr-only">Local breweries</dt>
-            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+            <dd class="flex items-baseline font-display font-bold text-3xl sm:text-4xl text-sand">
               <span class="stat-counter" data-target="35">0</span><span class="text-amber-400">+</span>
             </dd>
             <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Local Breweries</span>
           </div>
           <div>
             <dt class="sr-only">Unique brews</dt>
-            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+            <dd class="flex items-baseline font-display font-bold text-3xl sm:text-4xl text-sand">
               <span class="stat-counter" data-target="200">0</span><span class="text-amber-400">+</span>
             </dd>
             <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Unique Brews</span>
           </div>
           <div>
             <dt class="sr-only">West Australian</dt>
-            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+            <dd class="flex items-baseline font-display font-bold text-3xl sm:text-4xl text-sand">
               <span class="stat-counter" data-target="100">0</span><span class="text-amber-400">%</span>
             </dd>
             <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">West Australian</span>
@@ -260,7 +260,7 @@
   <section id="features" class="bg-sand py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-5 sm:px-8">
       <p class="eyebrow text-rust-600 mb-4">The Perth Pour</p>
-      <h2 class="font-display font-black text-roast text-4xl sm:text-5xl leading-tight max-w-2xl mb-5">Why Perth's Beer Scene Hits Different</h2>
+      <h2 class="font-display font-bold text-roast text-4xl sm:text-5xl leading-tight max-w-2xl mb-5">Why Perth's Beer Scene Hits Different</h2>
       <p class="font-body text-roast/65 text-lg max-w-xl mb-14">Three things separate the West from every other beer town in the country.</p>
 
       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -332,7 +332,7 @@
 
       <div>
         <p class="eyebrow text-amber-400 mb-4">Find a Brew</p>
-        <h2 class="font-display font-black text-sand text-4xl sm:text-5xl leading-tight mb-5">Four Patches, One Coastline</h2>
+        <h2 class="font-display font-bold text-sand text-4xl sm:text-5xl leading-tight mb-5">Four Patches, One Coastline</h2>
         <p class="font-body text-sand/65 text-lg max-w-md mb-8">
           Hover or tap a pin to see what each pocket of Perth pours. The whole scene sits within an hour of the CBD — most of it within twenty minutes.
         </p>
@@ -410,7 +410,7 @@
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <div class="lg:col-span-2">
-        <a href="#home" class="flex items-center gap-2 font-display font-black text-xl text-sand mb-4">
+        <a href="#home" class="flex items-center gap-2 font-display font-bold text-xl text-sand mb-4">
           <i data-lucide="beer" class="w-6 h-6 text-amber-400"></i> PERTH&nbsp;<span class="text-amber-400">BEERS</span>
         </a>
         <p class="font-body text-sand/55 text-sm max-w-sm leading-relaxed">
