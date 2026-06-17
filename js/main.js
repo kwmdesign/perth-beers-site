@@ -1,7 +1,8 @@
 /* ==========================================================================
    Perth Beers — site interactions
    Mobile menu, sticky nav shadow, stat counters, hero SVG reduced-motion
-   handling, Brewery Trail tabs, map pin tooltips, newsletter form.
+   handling, beer listing slider, Brewery Trail tabs, Swan Valley trail map
+   pin tooltips, newsletter form.
    Loaded at the end of <body>, so the DOM is already in place.
    ========================================================================== */
 
@@ -79,6 +80,32 @@ lucide.createIcons();
     }
   });
 
+  // ---------- Beer listing slider ----------
+  const beersTrack = document.getElementById('beersTrack');
+  const beersPrev = document.getElementById('beersPrev');
+  const beersNext = document.getElementById('beersNext');
+  if (beersTrack && beersPrev && beersNext) {
+    const cardStep = () => {
+      const card = beersTrack.querySelector('.beer-card');
+      const gap = parseFloat(getComputedStyle(beersTrack).gap) || 20;
+      return card ? card.offsetWidth + gap : 300;
+    };
+    const updateArrows = () => {
+      const max = beersTrack.scrollWidth - beersTrack.clientWidth - 2;
+      beersPrev.disabled = beersTrack.scrollLeft <= 2;
+      beersNext.disabled = beersTrack.scrollLeft >= max;
+    };
+    beersPrev.addEventListener('click', () => {
+      beersTrack.scrollBy({ left: -cardStep(), behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+    beersNext.addEventListener('click', () => {
+      beersTrack.scrollBy({ left: cardStep(), behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+    beersTrack.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  }
+
   // ---------- Brewery Trail tabs ----------
   const trailData = {
     fremantle: {
@@ -123,14 +150,14 @@ lucide.createIcons();
   });
   renderTrail('fremantle');
 
-  // ---------- Map pins + tooltip ----------
-  const mapData = Object.assign({}, trailData, {
-    coastal: {
-      label: 'Coastal North',
-      blurb: 'Sea breeze, ocean views, and easy-drinking session beers built for an afternoon by the water.',
-      names: 'Indian Ocean Brewing Co.'
-    }
-  });
+  // ---------- Swan Valley trail map pins + tooltip ----------
+  const swanValleyTrail = {
+    1: { name: 'Homestead Brewery', place: 'Caversham · Mandoon Estate', bestFor: 'Best for: breakfast & a refined vibe' },
+    2: { name: 'Mash Brewing', place: 'Henley Brook', bestFor: 'Best for: award-winning IPAs & a pub lunch' },
+    3: { name: 'Funk Brewshed', place: 'Henley Brook', bestFor: 'Best for: wild ferments, cider & non-beer drinkers' },
+    4: { name: 'Txoko Brewing', place: 'Baskerville', bestFor: 'Best for: rustic charm & wood-fired pizzas' },
+    5: { name: 'Feral Brewing Co.', place: 'Baskerville', bestFor: 'Best for: the final icon — Biggie Juice & Hop Hog' }
+  };
 
   const tooltip = document.getElementById('mapTooltip');
   const tooltipTitle = document.getElementById('mapTooltipTitle');
@@ -139,10 +166,10 @@ lucide.createIcons();
   let activePin = null;
 
   function showTooltip(pin) {
-    const data = mapData[pin.dataset.region];
-    tooltipTitle.textContent = data.label;
-    tooltipBlurb.textContent = data.blurb;
-    tooltipNames.textContent = data.names;
+    const data = swanValleyTrail[pin.dataset.stop];
+    tooltipTitle.textContent = data.name;
+    tooltipBlurb.textContent = data.place;
+    tooltipNames.textContent = data.bestFor;
     tooltip.style.top = pin.style.top;
     tooltip.style.left = pin.style.left;
     const leftPct = parseFloat(pin.style.left);

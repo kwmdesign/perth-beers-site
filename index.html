@@ -325,81 +325,244 @@
     </div>
   </section>
 
+  <!-- ===================== BEER LISTING ===================== -->
+  <section id="beers" class="relative bg-roast py-20 lg:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-4">
+        <div>
+          <p class="eyebrow text-amber-400 mb-4">On Tap Across Perth</p>
+          <h2 class="font-display font-bold text-sand text-4xl sm:text-5xl leading-tight max-w-xl">What's Actually In The Glass</h2>
+        </div>
+        <div class="flex gap-2">
+          <button id="beersPrev" class="slider-arrow" aria-label="Previous beers">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button id="beersNext" class="slider-arrow" aria-label="Next beers">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <p class="font-body text-sand/65 text-lg max-w-2xl mb-10">
+        Seven pours worth crossing town for, pulled from breweries across the four patches. Tap through, then go find the real thing.
+      </p>
+
+      <div id="beersTrack" class="beer-track" role="region" aria-label="Perth craft beer listing">
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pale Ale</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Little Creatures Brewing</p>
+          <span class="beer-card-type">Pale Ale</span>
+          <a href="https://www.littlecreatures.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Festive</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Otherside Brewing Co</p>
+          <span class="beer-card-type">Pale Ale</span>
+          <a href="https://othersidebrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Hop Hog</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Feral Brewing Co</p>
+          <span class="beer-card-type">American Pale Ale</span>
+          <a href="https://www.feralbrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Copy Cat</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Mash Brewing</p>
+          <span class="beer-card-type">American IPA</span>
+          <a href="https://www.mashbrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pilsner</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Elmar's in the Valley</p>
+          <span class="beer-card-type">German Pilsner</span>
+          <a href="https://www.elmars.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--innercity">Inner City</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Indian Ocean Ale</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Blasta Brewing Co</p>
+          <span class="beer-card-type">Australian Pale Ale</span>
+          <a href="https://www.blastabrewing.com" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+        <article class="beer-card">
+          <span class="beer-card-region beer-card-region--coastal">Coastal North</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Half Mast</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Indian Ocean Brewing Co</p>
+          <span class="beer-card-type">Mid-Strength Lager</span>
+          <a href="https://theiobc.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== MAP ===================== -->
   <section id="map" class="relative bg-roast py-20 lg:py-28 overflow-hidden">
     <div class="absolute inset-0 corrugated pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
 
-      <div>
-        <p class="eyebrow text-amber-400 mb-4">Find a Brew</p>
-        <h2 class="font-display font-bold text-sand text-4xl sm:text-5xl leading-tight mb-5">Four Patches, One Coastline</h2>
-        <p class="font-body text-sand/65 text-lg max-w-md mb-8">
-          Hover or tap a pin to see what each pocket of Perth pours. The whole scene sits within an hour of the CBD — most of it within twenty minutes.
-        </p>
+      <p class="eyebrow text-amber-400 mb-4">Find a Brew</p>
+      <h2 class="font-display font-bold text-sand text-4xl sm:text-5xl leading-tight mb-5 max-w-2xl">The Ultimate Swan Valley Brewery Trail</h2>
+      <p class="font-body text-sand/65 text-lg max-w-2xl mb-8">
+        Just 25 minutes north-east of the Perth CBD, the Swan Valley is famous for its vineyards — but it's also home to one of Australia's densest corridors of independent craft breweries. This curated loop groups stops that sit only minutes apart, so you spend less time driving and more time drinking.
+      </p>
 
-        <ul class="space-y-3 mb-9">
-          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Fremantle — the original
-          </li>
-          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
-            <span class="w-2.5 h-2.5 rounded-full bg-rust-500"></span> Swan Valley — vines &amp; valley
-          </li>
-          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
-            <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span> Inner City — late &amp; loud
-          </li>
-          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
-            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> Coastal North — sea breeze sessions
-          </li>
-        </ul>
-
-        <form id="subscribeForm" class="max-w-md" novalidate>
-          <label for="subscribeEmail" class="font-text text-xs uppercase tracking-widest text-sand/55 block mb-2">Get the trail map &amp; seasonal drops</label>
-          <div class="flex gap-2">
-            <input id="subscribeEmail" type="email" required placeholder="you@example.com"
-              class="flex-1 bg-sand/5 border border-sand/25 text-sand placeholder:text-sand/35 rounded-sm px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
-            <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-roast font-text font-bold uppercase tracking-wide text-sm px-5 rounded-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">
-              Join
-            </button>
-          </div>
-          <p id="subscribeMsg" class="font-text text-xs text-teal-400 mt-2 h-4" aria-live="polite"></p>
-        </form>
-      </div>
-
-      <div class="relative">
-        <div class="relative aspect-square sm:aspect-[5/4] rounded-md overflow-hidden border border-sand/10 bg-roast-light">
-          <svg viewBox="0 0 400 320" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="320" fill="#26221F"/>
-            <path d="M0,40 C40,60 30,110 55,150 C75,182 50,230 70,280 C82,305 60,320 60,320 L0,320 Z" fill="#1B1A18"/>
-            <path d="M140,0 C160,40 130,70 160,110 C190,150 230,150 250,190 C270,225 320,230 340,270 C355,298 400,300 400,300 L400,0 Z" fill="none" stroke="#D97706" stroke-opacity="0.35" stroke-width="3"/>
-            <circle cx="0" cy="0" r="0" fill="none"/>
-          </svg>
-
-          <button class="map-pin" style="top:22%; left:30%" data-region="coastal" aria-label="Coastal North breweries">
-            <span class="absolute inline-flex h-4 w-4 rounded-full bg-sky-400 opacity-60 animate-ping"></span>
-            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-sky-400 ring-2 ring-roast"></span>
-          </button>
-          <button class="map-pin" style="top:38%; left:68%" data-region="swanvalley" aria-label="Swan Valley breweries">
-            <span class="absolute inline-flex h-4 w-4 rounded-full bg-rust-500 opacity-60 animate-ping"></span>
-            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-rust-500 ring-2 ring-roast"></span>
-          </button>
-          <button class="map-pin" style="top:52%; left:50%" data-region="innercity" aria-label="Inner City breweries">
-            <span class="absolute inline-flex h-4 w-4 rounded-full bg-teal-500 opacity-60 animate-ping"></span>
-            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-teal-500 ring-2 ring-roast"></span>
-          </button>
-          <button class="map-pin" style="top:74%; left:26%" data-region="fremantle" aria-label="Fremantle breweries">
-            <span class="absolute inline-flex h-4 w-4 rounded-full bg-amber-400 opacity-60 animate-ping"></span>
-            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-amber-400 ring-2 ring-roast"></span>
-          </button>
-
-          <div id="mapTooltip" class="hidden absolute z-20 w-56 bg-sand text-roast rounded-sm shadow-2xl p-4 pointer-events-none">
-            <p class="font-display font-bold text-base mb-1" id="mapTooltipTitle"></p>
-            <p class="font-body text-xs text-roast/70 mb-2" id="mapTooltipBlurb"></p>
-            <p class="font-text text-[11px] uppercase tracking-wide text-amber-600" id="mapTooltipNames"></p>
-          </div>
+      <div class="flex flex-wrap gap-x-10 gap-y-3 mb-12 pb-8 border-b border-sand/15">
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="clock" class="w-4 h-4 text-amber-400"></i>
+          <span class="font-text text-xs uppercase tracking-widest text-sand/70">Full Day Trip</span>
         </div>
-        <p class="font-text text-[11px] uppercase tracking-widest text-sand/35 mt-3 text-center">Stylised guide map — not to scale</p>
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="route" class="w-4 h-4 text-amber-400"></i>
+          <span class="font-text text-xs uppercase tracking-widest text-sand/70">~30km Loop</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <i data-lucide="users" class="w-4 h-4 text-amber-400"></i>
+          <span class="font-text text-xs uppercase tracking-widest text-sand/70">Beer Lovers, Families &amp; Weekend Road-Trippers</span>
+        </div>
       </div>
 
+      <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+        <div>
+          <ol class="mb-9">
+            <li class="trail-stop">
+              <span class="trail-stop-num">1</span>
+              <div>
+                <p class="font-display font-bold text-sand text-lg leading-snug">Homestead Brewery</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-sand/40 mb-1">Caversham · Mandoon Estate</p>
+                <p class="font-body text-sand/65 text-sm">Best for: breakfast &amp; a refined vibe</p>
+              </div>
+            </li>
+            <li class="trail-stop">
+              <span class="trail-stop-num">2</span>
+              <div>
+                <p class="font-display font-bold text-sand text-lg leading-snug">Mash Brewing</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-sand/40 mb-1">Henley Brook</p>
+                <p class="font-body text-sand/65 text-sm">Best for: award-winning IPAs &amp; a pub lunch</p>
+              </div>
+            </li>
+            <li class="trail-stop">
+              <span class="trail-stop-num">3</span>
+              <div>
+                <p class="font-display font-bold text-sand text-lg leading-snug">Funk Brewshed</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-sand/40 mb-1">Henley Brook</p>
+                <p class="font-body text-sand/65 text-sm">Best for: wild ferments, cider &amp; non-beer drinkers</p>
+              </div>
+            </li>
+            <li class="trail-stop">
+              <span class="trail-stop-num">4</span>
+              <div>
+                <p class="font-display font-bold text-sand text-lg leading-snug">Txoko Brewing</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-sand/40 mb-1">Baskerville</p>
+                <p class="font-body text-sand/65 text-sm">Best for: rustic charm &amp; wood-fired pizzas</p>
+              </div>
+            </li>
+            <li class="trail-stop trail-stop--last">
+              <span class="trail-stop-num">5</span>
+              <div>
+                <p class="font-display font-bold text-sand text-lg leading-snug">Feral Brewing Co.</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-sand/40 mb-1">Baskerville</p>
+                <p class="font-body text-sand/65 text-sm">Best for: the final icon — Biggie Juice &amp; Hop Hog</p>
+              </div>
+            </li>
+          </ol>
+
+          <form id="subscribeForm" class="max-w-md" novalidate>
+            <label for="subscribeEmail" class="font-text text-xs uppercase tracking-widest text-sand/55 block mb-2">Get this trail map sent to your inbox</label>
+            <div class="flex gap-2">
+              <input id="subscribeEmail" type="email" required placeholder="you@example.com"
+                class="flex-1 bg-sand/5 border border-sand/25 text-sand placeholder:text-sand/35 rounded-sm px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
+              <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-roast font-text font-bold uppercase tracking-wide text-sm px-5 rounded-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">
+                Join
+              </button>
+            </div>
+            <p id="subscribeMsg" class="font-text text-xs text-teal-400 mt-2 h-4" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="relative">
+          <div class="relative aspect-[4/5] rounded-md overflow-hidden border border-sand/10 bg-roast-light">
+            <svg viewBox="0 0 400 500" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <pattern id="vineRows" width="22" height="22" patternTransform="rotate(35)" patternUnits="userSpaceOnUse">
+                  <line x1="0" y1="0" x2="0" y2="22" stroke="#F7F3EC" stroke-opacity="0.05" stroke-width="2"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="500" fill="#26221F"/>
+              <rect width="400" height="500" fill="url(#vineRows)"/>
+              <path d="M-20,40 C40,90 30,160 90,210 C150,260 140,340 200,390 C250,430 280,470 260,520" fill="none" stroke="#5EEAD4" stroke-opacity="0.12" stroke-width="10" stroke-linecap="round"/>
+
+              <path d="M70,460 C85,430 95,415 110,390 C130,365 165,335 180,310 C198,288 215,282 230,270 C248,238 258,200 270,170 C280,150 290,130 300,110"
+                    fill="none" stroke="#D97706" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+
+              <circle cx="70" cy="460" r="6" fill="none" stroke="#F7F3EC" stroke-opacity="0.5" stroke-width="2"/>
+              <circle cx="70" cy="460" r="2" fill="#F7F3EC" fill-opacity="0.5"/>
+            </svg>
+
+            <div class="absolute" style="top:92%; left:17.5%; transform:translate(-50%,-50%);">
+              <span class="font-text text-[10px] uppercase tracking-widest text-sand/45 whitespace-nowrap">Perth · 25 min</span>
+            </div>
+
+            <button class="map-pin" style="top:78%; left:27.5%" data-stop="1" aria-label="Stop 1: Homestead Brewery">
+              <span class="absolute inline-flex h-5 w-5 rounded-full bg-rust-500 opacity-50 animate-ping"></span>
+              <span class="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-rust-500 ring-2 ring-roast text-sand font-text font-bold text-[11px]">1</span>
+            </button>
+            <button class="map-pin" style="top:62%; left:45%" data-stop="2" aria-label="Stop 2: Mash Brewing">
+              <span class="absolute inline-flex h-5 w-5 rounded-full bg-rust-500 opacity-50 animate-ping"></span>
+              <span class="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-rust-500 ring-2 ring-roast text-sand font-text font-bold text-[11px]">2</span>
+            </button>
+            <button class="map-pin" style="top:54%; left:57.5%" data-stop="3" aria-label="Stop 3: Funk Brewshed">
+              <span class="absolute inline-flex h-5 w-5 rounded-full bg-rust-500 opacity-50 animate-ping"></span>
+              <span class="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-rust-500 ring-2 ring-roast text-sand font-text font-bold text-[11px]">3</span>
+            </button>
+            <button class="map-pin" style="top:34%; left:67.5%" data-stop="4" aria-label="Stop 4: Txoko Brewing">
+              <span class="absolute inline-flex h-5 w-5 rounded-full bg-rust-500 opacity-50 animate-ping"></span>
+              <span class="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-rust-500 ring-2 ring-roast text-sand font-text font-bold text-[11px]">4</span>
+            </button>
+            <button class="map-pin" style="top:22%; left:75%" data-stop="5" aria-label="Stop 5: Feral Brewing Co.">
+              <span class="absolute inline-flex h-5 w-5 rounded-full bg-amber-400 opacity-60 animate-ping"></span>
+              <span class="relative inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-400 ring-2 ring-roast text-roast font-text font-bold text-[11px]">5</span>
+            </button>
+
+            <div id="mapTooltip" class="hidden absolute z-20 w-56 bg-sand text-roast rounded-sm shadow-2xl p-4 pointer-events-none">
+              <p class="font-display font-bold text-base mb-1" id="mapTooltipTitle"></p>
+              <p class="font-text text-[11px] uppercase tracking-wide text-roast/45 mb-2" id="mapTooltipBlurb"></p>
+              <p class="font-body text-xs text-roast/70" id="mapTooltipNames"></p>
+            </div>
+          </div>
+          <p class="font-text text-[11px] uppercase tracking-widest text-sand/35 mt-3 text-center">Stylised trail map — loops back to Perth via the Great Northern Hwy</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
