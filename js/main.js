@@ -156,7 +156,7 @@ lucide.createIcons();
     2: { name: 'Mash Brewing', place: 'Henley Brook', bestFor: 'Best for: award-winning IPAs & a pub lunch' },
     3: { name: 'Funk Brewshed', place: 'Henley Brook', bestFor: 'Best for: wild ferments, cider & non-beer drinkers' },
     4: { name: 'Txoko Brewing', place: 'Baskerville', bestFor: 'Best for: rustic charm & wood-fired pizzas' },
-    5: { name: 'Feral Brewing Co.', place: 'Baskerville', bestFor: 'Best for: the final icon — Biggie Juice & Hop Hog' }
+    5: { name: 'Baskerville Tavern', place: 'Baskerville · home of Slumdog Brewing', bestFor: "Best for: the final icon — Feral's Biggie Juice & Hop Hog, still on tap" }
   };
 
   const tooltip = document.getElementById('mapTooltip');
