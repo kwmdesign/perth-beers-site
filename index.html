@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perth Beers — Sun, Sand & Exceptional Suds</title>
+<meta name="description" content="The ultimate guide to Western Australia's craft beer scene. Explore breweries from Fremantle to the Swan Valley, seasonal releases, and local taproom culture.">
+<meta name="theme-color" content="#1B1A18">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1A18'/%3E%3Cpath d='M10 10h10v2.5h1.5a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H20v2a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 10 22V10z' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3Cpath d='M20 13.5h1a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-1' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Big+Shoulders+Text:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Tailwind CDN (zero-build utility classes, compiled in the browser) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // This config must stay inline and load right after the CDN script above —
+  // Tailwind's in-browser compiler reads it synchronously before scanning
+  // the page's class attributes. It's the one bit of "code" that has to
+  // live in the HTML rather than css/styles.css or js/main.js.
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          roast: { DEFAULT: '#1B1A18', light: '#26221F', dim: '#332D27' },
+          sand:  { DEFAULT: '#F7F3EC', dim: '#ECE4D3' },
+          rust:  { 500: '#A8542E', 600: '#8B3F22' }
+        },
+        fontFamily: {
+          display: ['"Big Shoulders Display"', 'sans-serif'],
+          text: ['"Big Shoulders Text"', 'sans-serif'],
+          body: ['Manrope', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Custom component styles, animations & textures -->
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="font-body bg-sand text-roast antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-amber-500 focus:text-roast focus:px-4 focus:py-2 focus:rounded-sm focus:font-text focus:font-bold">Skip to content</a>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-sand/85 border-b border-roast/10 transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="h-16 md:h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-display font-black text-xl md:text-2xl tracking-tight text-roast">
+        <i data-lucide="beer" class="w-7 h-7 text-amber-600"></i>
+        PERTH&nbsp;<span class="text-amber-600">BEERS</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 font-text font-semibold text-sm uppercase tracking-wide" aria-label="Primary">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#trail" class="nav-link">Local Breweries</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#map" class="nav-link">Map</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#map" class="hidden sm:inline-flex items-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-sand font-text font-bold text-sm uppercase tracking-wide px-5 py-2.5 rounded-sm transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300">
+          <i data-lucide="map-pin" class="w-4 h-4"></i> Find a Brew
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 -mr-2 text-roast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-sm" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="md:hidden hidden border-t border-roast/10 bg-sand">
+    <nav class="px-5 py-5 flex flex-col gap-5 font-text font-semibold uppercase text-sm tracking-wide" aria-label="Mobile">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#trail" class="mobile-link">Local Breweries</a>
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#map" class="mobile-link">Map</a>
+      <a href="#map" class="bg-teal-600 text-sand text-center py-3 rounded-sm flex items-center justify-center gap-1.5">
+        <i data-lucide="map-pin" class="w-4 h-4"></i> Find a Brew
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="relative bg-roast overflow-hidden pt-16 md:pt-20">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-10 items-center px-5 sm:px-8 pt-14 pb-16 lg:pt-20 lg:pb-24">
+
+      <!-- Copy column -->
+      <div class="relative z-10">
+        <p class="eyebrow text-amber-400 mb-5">Western Australia · Craft Beer Guide</p>
+
+        <h1 class="font-display font-black text-sand text-[2.75rem] sm:text-6xl lg:text-[4.6rem] leading-[0.95] tracking-tight mb-6">
+          Sun, Sand, and<br class="hidden sm:block">
+          Exceptional
+          <span class="relative inline-block text-amber-400">
+            Suds
+            <svg class="absolute left-0 -bottom-1 w-full h-3" viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2,10 Q15,2 28,10 T54,10 T80,10 T106,10" fill="none" stroke="#FBBF24" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+            </svg>
+          </span>.
+        </h1>
+
+        <p class="font-body text-sand/70 text-base sm:text-lg max-w-md mb-9 leading-relaxed">
+          Discover the ultimate guide to the craft breweries shaping Western Australia's booming beer culture. From Swan Valley to Fremantle, your next favourite pint is right here.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 mb-11">
+          <a href="#features" class="cta-primary">
+            <i data-lucide="route" class="w-4 h-4"></i> Explore Local Breweries
+          </a>
+          <button id="watchSceneBtn" class="cta-outline">
+            <i data-lucide="play" class="w-4 h-4"></i> Watch the Scene
+          </button>
+        </div>
+
+        <dl id="statsRow" class="flex flex-wrap gap-x-9 gap-y-5 pt-7 border-t border-sand/15">
+          <div>
+            <dt class="sr-only">Local breweries</dt>
+            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+              <span class="stat-counter" data-target="35">0</span><span class="text-amber-400">+</span>
+            </dd>
+            <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Local Breweries</span>
+          </div>
+          <div>
+            <dt class="sr-only">Unique brews</dt>
+            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+              <span class="stat-counter" data-target="200">0</span><span class="text-amber-400">+</span>
+            </dd>
+            <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Unique Brews</span>
+          </div>
+          <div>
+            <dt class="sr-only">West Australian</dt>
+            <dd class="flex items-baseline font-display font-extrabold text-3xl sm:text-4xl text-sand">
+              <span class="stat-counter" data-target="100">0</span><span class="text-amber-400">%</span>
+            </dd>
+            <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">West Australian</span>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Illustration column -->
+      <div class="relative">
+        <div class="relative max-w-sm sm:max-w-md mx-auto lg:max-w-none lg:h-[560px]">
+          <svg id="heroSvg" viewBox="0 0 560 640" class="w-full h-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustration of a frosty beer glass at sunset over the Perth coastline">
+            <defs>
+              <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1B1A18"/>
+                <stop offset="55%" stop-color="#4A2E18"/>
+                <stop offset="100%" stop-color="#D97706"/>
+              </linearGradient>
+              <radialGradient id="sunGlow" cx="50%" cy="88%" r="55%">
+                <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.55"/>
+                <stop offset="55%" stop-color="#D97706" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="beerGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FCD34D"/>
+                <stop offset="100%" stop-color="#B45309"/>
+              </linearGradient>
+              <clipPath id="liquidClip">
+                <path d="M198,232 L362,232 L354,540 Q353,548 341,548 L219,548 Q207,548 206,540 Z"/>
+              </clipPath>
+            </defs>
+
+            <!-- sky + glow -->
+            <rect x="0" y="0" width="560" height="640" fill="url(#skyGrad)"/>
+            <circle cx="280" cy="566" r="300" fill="url(#sunGlow)">
+              <animate attributeName="opacity" values="0.85;1;0.85" dur="6s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- coastal skyline silhouette -->
+            <path d="M36,566 L36,498 L72,468 L108,498 L108,566 Z" fill="#15130F" fill-opacity="0.95"/>
+            <rect x="128" y="456" width="34" height="110" rx="4" fill="#15130F" fill-opacity="0.95"/>
+            <ellipse cx="145" cy="456" rx="17" ry="8" fill="#15130F" fill-opacity="0.95"/>
+            <rect x="438" y="498" width="74" height="68" fill="#15130F" fill-opacity="0.9"/>
+            <rect x="178" y="528" width="56" height="38" fill="#15130F" fill-opacity="0.85"/>
+            <line x1="486" y1="566" x2="486" y2="404" stroke="#15130F" stroke-width="9" stroke-opacity="0.95"/>
+            <line x1="486" y1="404" x2="540" y2="404" stroke="#15130F" stroke-width="7" stroke-opacity="0.95"/>
+            <line x1="525" y1="404" x2="525" y2="432" stroke="#15130F" stroke-width="3.5" stroke-opacity="0.95"/>
+
+            <!-- ocean -->
+            <rect x="0" y="566" width="560" height="74" fill="#100F0D"/>
+            <line x1="40" y1="592" x2="226" y2="592" stroke="#D97706" stroke-opacity="0.22" stroke-width="2"/>
+            <line x1="300" y1="606" x2="520" y2="606" stroke="#D97706" stroke-opacity="0.16" stroke-width="2"/>
+            <line x1="80" y1="621" x2="478" y2="621" stroke="#D97706" stroke-opacity="0.12" stroke-width="2"/>
+
+            <!-- glass outline -->
+            <path d="M190,150 L370,150 L357,540 Q356,556 339,556 L221,556 Q204,556 203,540 Z" fill="#F7F3EC" fill-opacity="0.05" stroke="#F7F3EC" stroke-opacity="0.45" stroke-width="3"/>
+
+            <!-- liquid -->
+            <path d="M198,232 L362,232 L354,540 Q353,548 341,548 L219,548 Q207,548 206,540 Z" fill="url(#beerGrad)"/>
+
+            <!-- rising bubbles, clipped to liquid -->
+            <g clip-path="url(#liquidClip)">
+              <circle cx="228" cy="535" r="2.2" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="535;235" dur="4.5s" begin="0s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.8;0.8;0" keyTimes="0;0.15;0.85;1" dur="4.5s" begin="0s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="258" cy="540" r="1.8" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="540;236" dur="3.8s" begin="1.2s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.75;0.75;0" keyTimes="0;0.15;0.85;1" dur="3.8s" begin="1.2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="290" cy="538" r="2.5" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="538;236" dur="5s" begin="0.6s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.8;0.8;0" keyTimes="0;0.15;0.85;1" dur="5s" begin="0.6s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="320" cy="536" r="2" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="536;236" dur="4.2s" begin="2s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.75;0.75;0" keyTimes="0;0.15;0.85;1" dur="4.2s" begin="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="342" cy="540" r="1.6" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="540;236" dur="3.5s" begin="1.6s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="3.5s" begin="1.6s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="214" cy="534" r="1.5" fill="#FDE68A" fill-opacity="0">
+                <animate attributeName="cy" values="534;236" dur="4.8s" begin="2.6s" repeatCount="indefinite"/>
+                <animate attributeName="fill-opacity" values="0;0.7;0.7;0" keyTimes="0;0.15;0.85;1" dur="4.8s" begin="2.6s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+
+            <!-- foam cap -->
+            <path d="M198,232 L198,222 Q205,206 216,216 Q224,200 236,213 Q246,198 258,212 Q270,197 282,212 Q294,198 306,213 Q316,199 328,213 Q338,201 348,215 Q356,206 362,222 L362,232 Z" fill="#FBF7EC"/>
+            <circle cx="216" cy="210" r="3" fill="#FBF7EC"/>
+            <circle cx="258" cy="206" r="4" fill="#FBF7EC"/>
+            <circle cx="306" cy="207" r="3" fill="#FBF7EC"/>
+            <circle cx="340" cy="213" r="2.5" fill="#FBF7EC"/>
+
+            <!-- glass shine -->
+            <path d="M225,165 C218,260 220,420 228,545" stroke="#F7F3EC" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M250,170 C246,250 248,380 253,540" stroke="#F7F3EC" stroke-opacity="0.10" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+            <!-- condensation -->
+            <ellipse cx="232" cy="300" rx="3" ry="4" fill="#F7F3EC" fill-opacity="0.45"/>
+            <ellipse cx="312" cy="280" rx="2.5" ry="3.5" fill="#F7F3EC" fill-opacity="0.4"/>
+            <ellipse cx="340" cy="350" rx="3" ry="4.5" fill="#F7F3EC" fill-opacity="0.45"/>
+            <ellipse cx="215" cy="400" rx="2" ry="3" fill="#F7F3EC" fill-opacity="0.4"/>
+            <ellipse cx="250" cy="470" rx="2.5" ry="3.5" fill="#F7F3EC" fill-opacity="0.4"/>
+            <ellipse cx="220" cy="520" rx="3" ry="4" fill="#F7F3EC" fill-opacity="0.45"/>
+            <ellipse cx="300" cy="430" rx="3.5" ry="5" fill="#F7F3EC" fill-opacity="0">
+              <animate attributeName="cy" values="430;430;462" keyTimes="0;0.15;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+              <animate attributeName="fill-opacity" values="0;0.5;0.5;0" keyTimes="0;0.15;0.8;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="335" cy="500" rx="2.5" ry="4" fill="#F7F3EC" fill-opacity="0">
+              <animate attributeName="cy" values="500;500;532" keyTimes="0;0.15;1" dur="7s" begin="2.5s" repeatCount="indefinite"/>
+              <animate attributeName="fill-opacity" values="0;0.5;0.5;0" keyTimes="0;0.15;0.8;1" dur="7s" begin="2.5s" repeatCount="indefinite"/>
+            </ellipse>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section id="features" class="bg-sand py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <p class="eyebrow text-rust-600 mb-4">The Perth Pour</p>
+      <h2 class="font-display font-black text-roast text-4xl sm:text-5xl leading-tight max-w-2xl mb-5">Why Perth's Beer Scene Hits Different</h2>
+      <p class="font-body text-roast/65 text-lg max-w-xl mb-14">Three things separate the West from every other beer town in the country.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Card 1: Brewery Trail -->
+        <article id="trail" class="feature-card">
+          <span class="absolute top-0 left-0 right-0 h-1.5 bg-amber-500"></span>
+          <div class="w-12 h-12 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center mb-5">
+            <i data-lucide="route" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-roast mb-2">The Brewery Trail</h3>
+          <p class="font-body text-roast/65 text-sm mb-5">Three distinct patches, three distinct pours. Pick one and start exploring.</p>
+
+          <div role="tablist" aria-label="Brewery regions" class="flex flex-wrap gap-2 mb-5">
+            <button class="tab-btn" role="tab" id="tab-fremantle" aria-selected="true" data-region="fremantle">Fremantle</button>
+            <button class="tab-btn" role="tab" id="tab-swanvalley" aria-selected="false" data-region="swanvalley">Swan Valley</button>
+            <button class="tab-btn" role="tab" id="tab-innercity" aria-selected="false" data-region="innercity">Inner City</button>
+          </div>
+
+          <div id="trailPanel" role="tabpanel" aria-labelledby="tab-fremantle" class="bg-sand-dim rounded-sm p-4 min-h-[168px] transition-opacity duration-300">
+            <!-- filled by JS -->
+          </div>
+        </article>
+
+        <!-- Card 2: Seasonal Releases -->
+        <article class="feature-card">
+          <span class="absolute top-0 left-0 right-0 h-1.5 bg-rust-500"></span>
+          <div class="w-12 h-12 rounded-full bg-rust-500/10 text-rust-600 flex items-center justify-center mb-5">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-roast mb-2">Seasonal Releases</h3>
+          <p class="font-body text-roast/65 text-sm mb-5">
+            WA-grown hops and native botanicals — quandong, lemon myrtle, Geraldton wax — turn up in small-batch drops timed to the state's seasons. Crisp dry-summer lagers give way to richer ales once the Hills cool down.
+          </p>
+          <div class="bg-sand-dim rounded-sm p-4">
+            <span class="font-text text-[11px] uppercase tracking-widest text-roast/45 block mb-1">Illustrative example</span>
+            <div class="flex items-center justify-between">
+              <span class="font-display font-bold text-roast">Geraldton Wax Saison</span>
+              <span class="font-text text-xs uppercase tracking-wide bg-rust-500/10 text-rust-600 px-2.5 py-1 rounded-sm">Limited drop</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Community & Events -->
+        <article id="scene" class="feature-card">
+          <span class="absolute top-0 left-0 right-0 h-1.5 bg-teal-600"></span>
+          <div class="w-12 h-12 rounded-full bg-teal-600/10 text-teal-600 flex items-center justify-center mb-5">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl text-roast mb-2">Community & Events</h3>
+          <p class="font-body text-roast/65 text-sm mb-5">
+            Trivia nights, brewery tours, beer-and-food-truck pairings, and the odd backyard festival. WA's taprooms are built for lingering — most have a playground or a beer garden, and almost all are dog-friendly.
+          </p>
+          <ul class="space-y-2 font-text text-sm text-roast/70">
+            <li class="flex items-center gap-2"><i data-lucide="calendar-days" class="w-4 h-4 text-teal-600"></i> Weekly taproom trivia &amp; live music</li>
+            <li class="flex items-center gap-2"><i data-lucide="truck" class="w-4 h-4 text-teal-600"></i> Rotating food truck line-ups</li>
+            <li class="flex items-center gap-2"><i data-lucide="tent" class="w-4 h-4 text-teal-600"></i> Seasonal beer festivals across the valley</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MAP ===================== -->
+  <section id="map" class="relative bg-roast py-20 lg:py-28 overflow-hidden">
+    <div class="absolute inset-0 corrugated pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
+
+      <div>
+        <p class="eyebrow text-amber-400 mb-4">Find a Brew</p>
+        <h2 class="font-display font-black text-sand text-4xl sm:text-5xl leading-tight mb-5">Four Patches, One Coastline</h2>
+        <p class="font-body text-sand/65 text-lg max-w-md mb-8">
+          Hover or tap a pin to see what each pocket of Perth pours. The whole scene sits within an hour of the CBD — most of it within twenty minutes.
+        </p>
+
+        <ul class="space-y-3 mb-9">
+          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Fremantle — the original
+          </li>
+          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
+            <span class="w-2.5 h-2.5 rounded-full bg-rust-500"></span> Swan Valley — vines &amp; valley
+          </li>
+          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
+            <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span> Inner City — late &amp; loud
+          </li>
+          <li class="flex items-center gap-3 font-text text-sm uppercase tracking-wide text-sand/80">
+            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> Coastal North — sea breeze sessions
+          </li>
+        </ul>
+
+        <form id="subscribeForm" class="max-w-md" novalidate>
+          <label for="subscribeEmail" class="font-text text-xs uppercase tracking-widest text-sand/55 block mb-2">Get the trail map &amp; seasonal drops</label>
+          <div class="flex gap-2">
+            <input id="subscribeEmail" type="email" required placeholder="you@example.com"
+              class="flex-1 bg-sand/5 border border-sand/25 text-sand placeholder:text-sand/35 rounded-sm px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400">
+            <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-roast font-text font-bold uppercase tracking-wide text-sm px-5 rounded-sm transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">
+              Join
+            </button>
+          </div>
+          <p id="subscribeMsg" class="font-text text-xs text-teal-400 mt-2 h-4" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div class="relative">
+        <div class="relative aspect-square sm:aspect-[5/4] rounded-md overflow-hidden border border-sand/10 bg-roast-light">
+          <svg viewBox="0 0 400 320" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="320" fill="#26221F"/>
+            <path d="M0,40 C40,60 30,110 55,150 C75,182 50,230 70,280 C82,305 60,320 60,320 L0,320 Z" fill="#1B1A18"/>
+            <path d="M140,0 C160,40 130,70 160,110 C190,150 230,150 250,190 C270,225 320,230 340,270 C355,298 400,300 400,300 L400,0 Z" fill="none" stroke="#D97706" stroke-opacity="0.35" stroke-width="3"/>
+            <circle cx="0" cy="0" r="0" fill="none"/>
+          </svg>
+
+          <button class="map-pin" style="top:22%; left:30%" data-region="coastal" aria-label="Coastal North breweries">
+            <span class="absolute inline-flex h-4 w-4 rounded-full bg-sky-400 opacity-60 animate-ping"></span>
+            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-sky-400 ring-2 ring-roast"></span>
+          </button>
+          <button class="map-pin" style="top:38%; left:68%" data-region="swanvalley" aria-label="Swan Valley breweries">
+            <span class="absolute inline-flex h-4 w-4 rounded-full bg-rust-500 opacity-60 animate-ping"></span>
+            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-rust-500 ring-2 ring-roast"></span>
+          </button>
+          <button class="map-pin" style="top:52%; left:50%" data-region="innercity" aria-label="Inner City breweries">
+            <span class="absolute inline-flex h-4 w-4 rounded-full bg-teal-500 opacity-60 animate-ping"></span>
+            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-teal-500 ring-2 ring-roast"></span>
+          </button>
+          <button class="map-pin" style="top:74%; left:26%" data-region="fremantle" aria-label="Fremantle breweries">
+            <span class="absolute inline-flex h-4 w-4 rounded-full bg-amber-400 opacity-60 animate-ping"></span>
+            <span class="relative inline-flex w-3.5 h-3.5 rounded-full bg-amber-400 ring-2 ring-roast"></span>
+          </button>
+
+          <div id="mapTooltip" class="hidden absolute z-20 w-56 bg-sand text-roast rounded-sm shadow-2xl p-4 pointer-events-none">
+            <p class="font-display font-bold text-base mb-1" id="mapTooltipTitle"></p>
+            <p class="font-body text-xs text-roast/70 mb-2" id="mapTooltipBlurb"></p>
+            <p class="font-text text-[11px] uppercase tracking-wide text-amber-600" id="mapTooltipNames"></p>
+          </div>
+        </div>
+        <p class="font-text text-[11px] uppercase tracking-widest text-sand/35 mt-3 text-center">Stylised guide map — not to scale</p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-roast-light text-sand pt-16 pb-8 border-t border-sand/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <a href="#home" class="flex items-center gap-2 font-display font-black text-xl text-sand mb-4">
+          <i data-lucide="beer" class="w-6 h-6 text-amber-400"></i> PERTH&nbsp;<span class="text-amber-400">BEERS</span>
+        </a>
+        <p class="font-body text-sand/55 text-sm max-w-sm leading-relaxed">
+          An independent guide to Western Australia's craft beer scene — breweries, seasonal drops, and the taproom culture that ties them together.
+        </p>
+      </div>
+      <div>
+        <p class="font-text font-bold uppercase tracking-wide text-xs text-sand/40 mb-4">Explore</p>
+        <ul class="space-y-2.5 font-body text-sm text-sand/70">
+          <li><a href="#home" class="hover:text-amber-400 transition-colors duration-300">Home</a></li>
+          <li><a href="#trail" class="hover:text-amber-400 transition-colors duration-300">Local Breweries</a></li>
+          <li><a href="#features" class="hover:text-amber-400 transition-colors duration-300">Features</a></li>
+          <li><a href="#map" class="hover:text-amber-400 transition-colors duration-300">Map</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-text font-bold uppercase tracking-wide text-xs text-sand/40 mb-4">Follow</p>
+        <div class="flex gap-3">
+          <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          <a href="#" class="social-icon" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-sand/10 pt-6 flex flex-col sm:flex-row justify-between gap-3">
+      <p class="font-body text-xs text-sand/40">© 2026 Perth Beers. Independent guide, not affiliated with any brewery listed.</p>
+      <p class="font-body text-xs text-sand/40">Enjoy WA's craft beer scene responsibly · 18+</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

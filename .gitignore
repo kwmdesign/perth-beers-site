@@ -1,0 +1,14 @@
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor noise
+.vscode/
+*.swp
+
+# Never commit credentials
+*credentials*
+*secrets*
+.env
+.env.*
+ftp-config.*
