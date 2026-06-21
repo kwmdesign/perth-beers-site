@@ -30,7 +30,7 @@ section {
   align-items: center;
   gap: 0.5rem;
   background-color: #F59E0B;
-  color: #1A3C46;
+  color: #1B1A18;
   font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -45,15 +45,15 @@ section {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cta-primary:hover { background-color: #FBBF24; transform: translateY(-2px); }
-.cta-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #1A3C46, 0 0 0 4px #FCD34D; }
+.cta-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #1B1A18, 0 0 0 4px #FCD34D; }
 
 .cta-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: transparent;
-  border: 2px solid rgba(245,240,230,0.3);
-  color: #F5F0E6;
+  border: 2px solid rgba(247,243,236,0.3);
+  color: #F7F3EC;
   font-family: "General Sans", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -71,7 +71,7 @@ section {
 .feature-card {
   position: relative;
   background-color: #ffffff;
-  border: 1px solid rgba(26,60,70,0.1);
+  border: 1px solid rgba(27,26,24,0.1);
   border-radius: 0.375rem;
   padding: 1.75rem;
   overflow: hidden;
@@ -94,8 +94,8 @@ section {
   letter-spacing: 0.025em;
   font-size: 0.75rem;
   border-radius: 0.125rem;
-  border: 1px solid rgba(26,60,70,0.15);
-  color: rgba(26,60,70,0.55);
+  border: 1px solid rgba(27,26,24,0.15);
+  color: rgba(27,26,24,0.55);
   background: transparent;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,23 +103,23 @@ section {
 @media (min-width: 640px) {
   .tab-btn { font-size: 0.875rem; }
 }
-.tab-btn:hover { border-color: rgba(245,158,11,0.7); color: #1A3C46; }
+.tab-btn:hover { border-color: rgba(245,158,11,0.7); color: #1B1A18; }
 .tab-btn:focus-visible { outline: none; box-shadow: 0 0 0 2px #F59E0B; }
 .tab-btn[aria-selected="true"] {
-  background-color: #1A3C46;
-  color: #F5F0E6;
-  border-color: #1A3C46;
+  background-color: #1B1A18;
+  color: #F7F3EC;
+  border-color: #1B1A18;
 }
 
 /* ---------- Nav links ---------- */
 .nav-link {
   position: relative;
   padding-bottom: 0.375rem;
-  color: rgba(26,60,70,0.75);
+  color: rgba(27,26,24,0.75);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.nav-link:hover { color: #1A3C46; }
+.nav-link:hover { color: #1B1A18; }
 .nav-link::after {
   content: '';
   position: absolute;
@@ -134,11 +134,11 @@ section {
 
 .mobile-link {
   display: block;
-  color: rgba(26,60,70,0.8);
+  color: rgba(27,26,24,0.8);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.mobile-link:hover { color: #1A3C46; }
+.mobile-link:hover { color: #1B1A18; }
 
 /* ---------- Misc components ---------- */
 .eyebrow {
@@ -182,7 +182,7 @@ section {
   flex: 0 0 auto;
   scroll-snap-align: start;
   width: 17rem;
-  background-color: #F5F0E6;
+  background-color: #F7F3EC;
   border-radius: 0.375rem;
   padding: 1.5rem;
   position: relative;
@@ -201,8 +201,8 @@ section {
   padding: 0.25rem 0.6rem;
   border-radius: 0.125rem;
 }
-.beer-card-region--fremantle  { background-color: rgba(251,191,36,0.18); color: #7A4F10; }
-.beer-card-region--swanvalley { background-color: rgba(168,84,46,0.18);  color: #A87030; }
+.beer-card-region--fremantle  { background-color: rgba(251,191,36,0.18); color: #92400E; }
+.beer-card-region--swanvalley { background-color: rgba(168,84,46,0.18);  color: #8B3F22; }
 .beer-card-region--innercity  { background-color: rgba(13,148,136,0.15); color: #0F766E; }
 .beer-card-region--coastal    { background-color: rgba(56,189,248,0.2); color: #0369A1; }
 
@@ -213,8 +213,8 @@ section {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: rgba(26,60,70,0.55);
-  border: 1px solid rgba(26,60,70,0.15);
+  color: rgba(27,26,24,0.55);
+  border: 1px solid rgba(27,26,24,0.15);
   padding: 0.2rem 0.55rem;
   border-radius: 0.125rem;
   margin-bottom: 1.15rem;
@@ -229,9 +229,9 @@ section {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  color: #A87030;
+  color: #8B3F22;
   text-decoration: none;
-  border-top: 1px solid rgba(26,60,70,0.1);
+  border-top: 1px solid rgba(27,26,24,0.1);
   padding-top: 0.9rem;
   transition: color 0.3s ease, gap 0.3s ease;
 }
@@ -245,13 +245,13 @@ section {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(245,240,230,0.25);
-  color: #F5F0E6;
+  border: 1px solid rgba(247,243,236,0.25);
+  color: #F7F3EC;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.slider-arrow:hover { background-color: rgba(245,240,230,0.1); border-color: rgba(251,191,36,0.5); color: #FBBF24; }
+.slider-arrow:hover { background-color: rgba(247,243,236,0.1); border-color: rgba(251,191,36,0.5); color: #FBBF24; }
 .slider-arrow:focus-visible { outline: none; box-shadow: 0 0 0 2px #FCD34D; }
 .slider-arrow:disabled { opacity: 0.3; cursor: default; }
 
@@ -262,8 +262,8 @@ section {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 9999px;
-  border: 1px solid rgba(245,240,230,0.2);
-  color: rgba(245,240,230,0.7);
+  border: 1px solid rgba(247,243,236,0.2);
+  color: rgba(247,243,236,0.7);
   text-decoration: none;
   transition: all 0.3s ease;
 }
