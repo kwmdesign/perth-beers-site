@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perth Beers — Good Vibes, Great Weather & World-Class Brews</title>
 <meta name="description" content="The ultimate guide to Western Australia's craft beer scene. Explore breweries from Fremantle to the Swan Valley, seasonal releases, and local taproom culture.">
-<meta name="theme-color" content="#1B1A18">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B1A18'/%3E%3Cpath d='M10 10h10v2.5h1.5a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H20v2a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 10 22V10z' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3Cpath d='M20 13.5h1a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-1' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#1A3C46">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A3C46'/%3E%3Cpath d='M10 10h10v2.5h1.5a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3H20v2a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 10 22V10z' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3Cpath d='M20 13.5h1a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5h-1' fill='none' stroke='%23F59E0B' stroke-width='1.6'/%3E%3C/svg%3E">
 
 <!-- General Sans + Excon are Fontshare fonts, not Google Fonts — served from Fontshare's own CDN -->
 <link rel="preconnect" href="https://api.fontshare.com">
@@ -27,9 +27,8 @@
 <header id="siteHeader" class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-sand/85 border-b border-roast/10 transition-shadow duration-300">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
     <div class="h-16 md:h-20 flex items-center justify-between">
-      <a href="#home" class="flex items-center gap-2 font-display font-bold text-xl md:text-2xl tracking-tight text-roast">
-        <i data-lucide="beer" class="w-7 h-7 text-amber-600"></i>
-        PERTH&nbsp;<span class="text-amber-600">BEERS</span>
+      <a href="#home" class="flex items-center" aria-label="Perth Beers — home">
+        <img src="assets/pb_web_logo.png" alt="Perth Beers" class="h-12 md:h-14 w-auto">
       </a>
 
       <nav class="hidden md:flex items-center gap-9 font-text font-semibold text-sm uppercase tracking-wide" aria-label="Primary">
@@ -40,7 +39,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="#map" class="hidden sm:inline-flex items-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-sand font-text font-bold text-sm uppercase tracking-wide px-5 py-2.5 rounded-sm transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-300">
+        <a href="#map" class="hidden sm:inline-flex items-center gap-1.5 bg-rust-500 hover:bg-rust-600 text-sand font-text font-bold text-sm uppercase tracking-wide px-5 py-2.5 rounded-sm transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300">
           <i data-lucide="map-pin" class="w-4 h-4"></i> Find a Brew
         </a>
         <button id="menuBtn" class="md:hidden p-2 -mr-2 text-roast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-sm" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -95,14 +94,14 @@
           <div>
             <dt class="sr-only">Local breweries</dt>
             <dd class="flex items-baseline font-display font-bold text-3xl sm:text-4xl text-sand">
-              <span class="stat-counter" data-target="55">0</span><span class="text-amber-400">+</span>
+              <span class="stat-counter" data-target="35">0</span><span class="text-amber-400">+</span>
             </dd>
             <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Local Breweries</span>
           </div>
           <div>
             <dt class="sr-only">Unique brews</dt>
             <dd class="flex items-baseline font-display font-bold text-3xl sm:text-4xl text-sand">
-              <span class="stat-counter" data-target="500">0</span><span class="text-amber-400">+</span>
+              <span class="stat-counter" data-target="200">0</span><span class="text-amber-400">+</span>
             </dd>
             <span class="font-text text-[11px] sm:text-xs uppercase tracking-widest text-sand/55 block mt-1">Unique Brews</span>
           </div>
@@ -122,7 +121,7 @@
           <svg id="heroSvg" viewBox="0 0 560 640" class="w-full h-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Illustration of a frosty beer glass at sunset over the Perth coastline">
             <defs>
               <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1B1A18"/>
+                <stop offset="0%" stop-color="#1A3C46"/>
                 <stop offset="55%" stop-color="#4A2E18"/>
                 <stop offset="100%" stop-color="#D97706"/>
               </linearGradient>
@@ -147,23 +146,23 @@
             </circle>
 
             <!-- coastal skyline silhouette -->
-            <path d="M36,566 L36,498 L72,468 L108,498 L108,566 Z" fill="#15130F" fill-opacity="0.95"/>
-            <rect x="128" y="456" width="34" height="110" rx="4" fill="#15130F" fill-opacity="0.95"/>
-            <ellipse cx="145" cy="456" rx="17" ry="8" fill="#15130F" fill-opacity="0.95"/>
-            <rect x="438" y="498" width="74" height="68" fill="#15130F" fill-opacity="0.9"/>
-            <rect x="178" y="528" width="56" height="38" fill="#15130F" fill-opacity="0.85"/>
-            <line x1="486" y1="566" x2="486" y2="404" stroke="#15130F" stroke-width="9" stroke-opacity="0.95"/>
-            <line x1="486" y1="404" x2="540" y2="404" stroke="#15130F" stroke-width="7" stroke-opacity="0.95"/>
-            <line x1="525" y1="404" x2="525" y2="432" stroke="#15130F" stroke-width="3.5" stroke-opacity="0.95"/>
+            <path d="M36,566 L36,498 L72,468 L108,498 L108,566 Z" fill="#0D2830" fill-opacity="0.95"/>
+            <rect x="128" y="456" width="34" height="110" rx="4" fill="#0D2830" fill-opacity="0.95"/>
+            <ellipse cx="145" cy="456" rx="17" ry="8" fill="#0D2830" fill-opacity="0.95"/>
+            <rect x="438" y="498" width="74" height="68" fill="#0D2830" fill-opacity="0.9"/>
+            <rect x="178" y="528" width="56" height="38" fill="#0D2830" fill-opacity="0.85"/>
+            <line x1="486" y1="566" x2="486" y2="404" stroke="#0D2830" stroke-width="9" stroke-opacity="0.95"/>
+            <line x1="486" y1="404" x2="540" y2="404" stroke="#0D2830" stroke-width="7" stroke-opacity="0.95"/>
+            <line x1="525" y1="404" x2="525" y2="432" stroke="#0D2830" stroke-width="3.5" stroke-opacity="0.95"/>
 
             <!-- ocean -->
-            <rect x="0" y="566" width="560" height="74" fill="#100F0D"/>
+            <rect x="0" y="566" width="560" height="74" fill="#081E24"/>
             <line x1="40" y1="592" x2="226" y2="592" stroke="#D97706" stroke-opacity="0.22" stroke-width="2"/>
             <line x1="300" y1="606" x2="520" y2="606" stroke="#D97706" stroke-opacity="0.16" stroke-width="2"/>
             <line x1="80" y1="621" x2="478" y2="621" stroke="#D97706" stroke-opacity="0.12" stroke-width="2"/>
 
             <!-- glass outline -->
-            <path d="M190,150 L370,150 L357,540 Q356,556 339,556 L221,556 Q204,556 203,540 Z" fill="#F7F3EC" fill-opacity="0.05" stroke="#F7F3EC" stroke-opacity="0.45" stroke-width="3"/>
+            <path d="M190,150 L370,150 L357,540 Q356,556 339,556 L221,556 Q204,556 203,540 Z" fill="#F5F0E6" fill-opacity="0.05" stroke="#F5F0E6" stroke-opacity="0.45" stroke-width="3"/>
 
             <!-- liquid -->
             <path d="M198,232 L362,232 L354,540 Q353,548 341,548 L219,548 Q207,548 206,540 Z" fill="url(#beerGrad)"/>
@@ -197,28 +196,28 @@
             </g>
 
             <!-- foam cap -->
-            <path d="M198,232 L198,222 Q205,206 216,216 Q224,200 236,213 Q246,198 258,212 Q270,197 282,212 Q294,198 306,213 Q316,199 328,213 Q338,201 348,215 Q356,206 362,222 L362,232 Z" fill="#FBF7EC"/>
-            <circle cx="216" cy="210" r="3" fill="#FBF7EC"/>
-            <circle cx="258" cy="206" r="4" fill="#FBF7EC"/>
-            <circle cx="306" cy="207" r="3" fill="#FBF7EC"/>
-            <circle cx="340" cy="213" r="2.5" fill="#FBF7EC"/>
+            <path d="M198,232 L198,222 Q205,206 216,216 Q224,200 236,213 Q246,198 258,212 Q270,197 282,212 Q294,198 306,213 Q316,199 328,213 Q338,201 348,215 Q356,206 362,222 L362,232 Z" fill="#F5F0E6"/>
+            <circle cx="216" cy="210" r="3" fill="#F5F0E6"/>
+            <circle cx="258" cy="206" r="4" fill="#F5F0E6"/>
+            <circle cx="306" cy="207" r="3" fill="#F5F0E6"/>
+            <circle cx="340" cy="213" r="2.5" fill="#F5F0E6"/>
 
             <!-- glass shine -->
-            <path d="M225,165 C218,260 220,420 228,545" stroke="#F7F3EC" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round" fill="none"/>
-            <path d="M250,170 C246,250 248,380 253,540" stroke="#F7F3EC" stroke-opacity="0.10" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M225,165 C218,260 220,420 228,545" stroke="#F5F0E6" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <path d="M250,170 C246,250 248,380 253,540" stroke="#F5F0E6" stroke-opacity="0.10" stroke-width="5" stroke-linecap="round" fill="none"/>
 
             <!-- condensation -->
-            <ellipse cx="232" cy="300" rx="3" ry="4" fill="#F7F3EC" fill-opacity="0.45"/>
-            <ellipse cx="312" cy="280" rx="2.5" ry="3.5" fill="#F7F3EC" fill-opacity="0.4"/>
-            <ellipse cx="340" cy="350" rx="3" ry="4.5" fill="#F7F3EC" fill-opacity="0.45"/>
-            <ellipse cx="215" cy="400" rx="2" ry="3" fill="#F7F3EC" fill-opacity="0.4"/>
-            <ellipse cx="250" cy="470" rx="2.5" ry="3.5" fill="#F7F3EC" fill-opacity="0.4"/>
-            <ellipse cx="220" cy="520" rx="3" ry="4" fill="#F7F3EC" fill-opacity="0.45"/>
-            <ellipse cx="300" cy="430" rx="3.5" ry="5" fill="#F7F3EC" fill-opacity="0">
+            <ellipse cx="232" cy="300" rx="3" ry="4" fill="#F5F0E6" fill-opacity="0.45"/>
+            <ellipse cx="312" cy="280" rx="2.5" ry="3.5" fill="#F5F0E6" fill-opacity="0.4"/>
+            <ellipse cx="340" cy="350" rx="3" ry="4.5" fill="#F5F0E6" fill-opacity="0.45"/>
+            <ellipse cx="215" cy="400" rx="2" ry="3" fill="#F5F0E6" fill-opacity="0.4"/>
+            <ellipse cx="250" cy="470" rx="2.5" ry="3.5" fill="#F5F0E6" fill-opacity="0.4"/>
+            <ellipse cx="220" cy="520" rx="3" ry="4" fill="#F5F0E6" fill-opacity="0.45"/>
+            <ellipse cx="300" cy="430" rx="3.5" ry="5" fill="#F5F0E6" fill-opacity="0">
               <animate attributeName="cy" values="430;430;462" keyTimes="0;0.15;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
               <animate attributeName="fill-opacity" values="0;0.5;0.5;0" keyTimes="0;0.15;0.8;1" dur="6s" begin="0.5s" repeatCount="indefinite"/>
             </ellipse>
-            <ellipse cx="335" cy="500" rx="2.5" ry="4" fill="#F7F3EC" fill-opacity="0">
+            <ellipse cx="335" cy="500" rx="2.5" ry="4" fill="#F5F0E6" fill-opacity="0">
               <animate attributeName="cy" values="500;500;532" keyTimes="0;0.15;1" dur="7s" begin="2.5s" repeatCount="indefinite"/>
               <animate attributeName="fill-opacity" values="0;0.5;0.5;0" keyTimes="0;0.15;0.8;1" dur="7s" begin="2.5s" repeatCount="indefinite"/>
             </ellipse>
@@ -483,14 +482,14 @@
         <div class="relative">
           <div class="relative aspect-[4/5] rounded-md overflow-hidden border border-sand/10 bg-roast-light">
             <svg viewBox="0 0 400 500" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <rect width="400" height="500" fill="#26221F"/>
-              <path d="M-20,40 C40,90 30,160 90,210 C150,260 140,340 200,390 C250,430 280,470 260,520" fill="none" stroke="#5EEAD4" stroke-opacity="0.12" stroke-width="10" stroke-linecap="round"/>
+              <rect width="400" height="500" fill="#1A3C46"/>
+              <path d="M-20,40 C40,90 30,160 90,210 C150,260 140,340 200,390 C250,430 280,470 260,520" fill="none" stroke="#F5F0E6" stroke-opacity="0.15" stroke-width="10" stroke-linecap="round"/>
 
               <path d="M70,460 C85,430 95,415 110,390 C130,365 165,335 180,310 C198,288 215,282 230,270 C248,238 258,200 270,170 C280,150 290,130 300,110"
                     fill="none" stroke="#D97706" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
 
-              <circle cx="70" cy="460" r="6" fill="none" stroke="#F7F3EC" stroke-opacity="0.5" stroke-width="2"/>
-              <circle cx="70" cy="460" r="2" fill="#F7F3EC" fill-opacity="0.5"/>
+              <circle cx="70" cy="460" r="6" fill="none" stroke="#F5F0E6" stroke-opacity="0.5" stroke-width="2"/>
+              <circle cx="70" cy="460" r="2" fill="#F5F0E6" fill-opacity="0.5"/>
             </svg>
 
             <div class="absolute" style="top:92%; left:17.5%; transform:translate(-50%,-50%);">
