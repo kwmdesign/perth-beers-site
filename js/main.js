@@ -70,16 +70,6 @@ lucide.createIcons();
     if (heroSvg && heroSvg.pauseAnimations) heroSvg.pauseAnimations();
   }
 
-  // ---------- Watch the Scene -> scroll + pulse ----------
-  document.getElementById('watchSceneBtn').addEventListener('click', () => {
-    const scene = document.getElementById('scene');
-    scene.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'center' });
-    if (!prefersReduced) {
-      scene.classList.add('pulse-highlight');
-      setTimeout(() => scene.classList.remove('pulse-highlight'), 1900);
-    }
-  });
-
   // ---------- Beer listing slider ----------
   const beersTrack = document.getElementById('beersTrack');
   const beersPrev = document.getElementById('beersPrev');
