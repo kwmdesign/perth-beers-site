@@ -115,11 +115,11 @@ section {
 .nav-link {
   position: relative;
   padding-bottom: 0.375rem;
-  color: rgba(245,240,230,0.85);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.nav-link:hover { color: #F5F0E6; }
+.nav-link:hover { color: #ffffff; }
 .nav-link::after {
   content: '';
   position: absolute;
@@ -134,16 +134,21 @@ section {
 
 .mobile-link {
   display: block;
-  color: rgba(245,240,230,0.85);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.mobile-link:hover { color: #F5F0E6; }
+.mobile-link:hover { color: #ffffff; }
 
 /* ---------- Site header ---------- */
 #siteHeader {
   background-color: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Hero section — explicit black, no teal ---------- */
+#home {
+  background-color: #0D0D0D !important;
 }
 
 /* ---------- Misc components ---------- */
