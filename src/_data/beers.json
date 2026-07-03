@@ -3,7 +3,7 @@
     {
       "name": "Single Fin",
       "brewery": "Gage Roads Brew Co",
-      "type": "Summer Ale",
+      "type": "Bright Ale",
       "region": "fremantle",
       "link": "https://gageroads.com.au"
     },
@@ -97,6 +97,13 @@
       "type": "Mid-Strength Lager",
       "region": "coastal",
       "link": "https://theiobc.com.au"
+    },
+    {
+      "name": "Test Beer",
+      "brewery": "Awesome Beers Co",
+      "type": "Lager",
+      "region": "innercity",
+      "link": "https://www.google.com"
     }
   ]
 }
