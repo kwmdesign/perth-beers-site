@@ -97,6 +97,13 @@
       "type": "Mid-Strength Lager",
       "region": "coastal",
       "link": "https://theiobc.com.au"
+    },
+    {
+      "name": "Test Beer",
+      "brewery": "Awesome Beers Co",
+      "type": "Lager",
+      "region": "innercity",
+      "link": "https://www.google.com"
     }
   ]
 }
