@@ -189,14 +189,16 @@ lucide.createIcons();
   // ---------- Subscribe form (front-end only — wire to your email provider) ----------
   const subscribeForm = document.getElementById('subscribeForm');
   const subscribeMsg = document.getElementById('subscribeMsg');
-  subscribeForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const input = document.getElementById('subscribeEmail');
-    if (input.checkValidity()) {
-      subscribeMsg.textContent = "Thanks — check your inbox to confirm.";
-      input.value = '';
-    } else {
-      subscribeMsg.textContent = 'Please enter a valid email address.';
-      subscribeMsg.classList.add('text-amber-400');
-    }
-  });
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = document.getElementById('subscribeEmail');
+      if (input.checkValidity()) {
+        subscribeMsg.textContent = "Thanks — check your inbox to confirm.";
+        input.value = '';
+      } else {
+        subscribeMsg.textContent = 'Please enter a valid email address.';
+        subscribeMsg.classList.add('text-amber-400');
+      }
+    });
+  }
