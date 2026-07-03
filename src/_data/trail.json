@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "name": "Homestead Brewery",
+      "place": "Caversham · Mandoon Estate",
+      "bestFor": "Best for: breakfast & a refined vibe"
+    },
+    {
+      "name": "Mash Brewing",
+      "place": "Henley Brook",
+      "bestFor": "Best for: award-winning IPAs & a pub lunch"
+    },
+    {
+      "name": "Funk Brewshed",
+      "place": "Henley Brook",
+      "bestFor": "Best for: wild ferments, cider & non-beer drinkers"
+    },
+    {
+      "name": "Txoko Brewing",
+      "place": "Baskerville",
+      "bestFor": "Best for: rustic charm & wood-fired pizzas"
+    },
+    {
+      "name": "Baskerville Tavern",
+      "place": "Baskerville · home of Slumdog Brewing",
+      "bestFor": "Best for: the final icon — Feral's Biggie Juice & Hop Hog, still on tap"
+    }
+  ]
+}

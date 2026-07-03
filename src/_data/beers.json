@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "name": "Single Fin",
+      "brewery": "Gage Roads Brew Co",
+      "type": "Summer Ale",
+      "region": "fremantle",
+      "link": "https://gageroads.com.au"
+    },
+    {
+      "name": "Pipe Dreams",
+      "brewery": "Gage Roads Brew Co",
+      "type": "Coastal Lager",
+      "region": "fremantle",
+      "link": "https://gageroads.com.au"
+    },
+    {
+      "name": "Side Track",
+      "brewery": "Gage Roads Brew Co",
+      "type": "All Day XPA",
+      "region": "fremantle",
+      "link": "https://gageroads.com.au"
+    },
+    {
+      "name": "Pale Ale",
+      "brewery": "Little Creatures Brewing",
+      "type": "Pale Ale",
+      "region": "fremantle",
+      "link": "https://www.littlecreatures.com.au"
+    },
+    {
+      "name": "Festive",
+      "brewery": "Otherside Brewing Co",
+      "type": "Pale Ale",
+      "region": "fremantle",
+      "link": "https://othersidebrewing.com.au"
+    },
+    {
+      "name": "Thieves Lager",
+      "brewery": "Running With Thieves",
+      "type": "Lager",
+      "region": "fremantle",
+      "link": "https://runningwiththieves.com"
+    },
+    {
+      "name": "Chief IPA",
+      "brewery": "The Monk Craft Brewery",
+      "type": "IPA",
+      "region": "fremantle",
+      "link": "https://www.themonk.com.au"
+    },
+    {
+      "name": "Hop Hog",
+      "brewery": "Feral Brewing Co",
+      "type": "American Pale Ale",
+      "region": "swanvalley",
+      "link": "https://www.feralbrewing.com.au"
+    },
+    {
+      "name": "Copy Cat",
+      "brewery": "Mash Brewing",
+      "type": "American IPA",
+      "region": "swanvalley",
+      "link": "https://www.mashbrewing.com.au"
+    },
+    {
+      "name": "Pilsner",
+      "brewery": "Valley Social",
+      "type": "German Pilsner",
+      "region": "swanvalley",
+      "link": "https://www.valleysocial.com.au"
+    },
+    {
+      "name": "Pale Ale",
+      "brewery": "Bailey Brewing Co",
+      "type": "Pale Ale",
+      "region": "swanvalley",
+      "link": "https://www.baileybrewingco.com.au"
+    },
+    {
+      "name": "Indian Ocean Ale",
+      "brewery": "Blasta Brewing Co",
+      "type": "Australian Pale Ale",
+      "region": "innercity",
+      "link": "https://www.blastabrewing.com"
+    },
+    {
+      "name": "Beerland Wheat",
+      "brewery": "Northbridge Brewing Co",
+      "type": "Wheat Beer",
+      "region": "innercity",
+      "link": "https://www.northbridgebrewingco.com.au"
+    },
+    {
+      "name": "Half Mast",
+      "brewery": "Indian Ocean Brewing Co",
+      "type": "Mid-Strength Lager",
+      "region": "coastal",
+      "link": "https://theiobc.com.au"
+    }
+  ]
+}

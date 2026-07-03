@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: ["./src/**/*.njk", "./src/**/*.html"],
   theme: {
     extend: {
       colors: {
-        roast: { DEFAULT: '#1B1A18', light: '#26221F', dim: '#332D27' },
-        sand:  { DEFAULT: '#F7F3EC', dim: '#ECE4D3' },
-        rust:  { 500: '#A8542E', 600: '#8B3F22' }
+        roast: { DEFAULT: '#0D0D0D', light: '#1A1A1A', dim: '#2A2A2A' },
+        sand:  { DEFAULT: '#F5F0E6', dim: '#E8DFC8' },
+        rust:  { 500: '#E4223D', 600: '#C01C33' }
       },
       fontFamily: {
         display: ['"General Sans"', 'sans-serif'],

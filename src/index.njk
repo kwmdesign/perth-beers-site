@@ -313,147 +313,18 @@
       </p>
 
       <div id="beersTrack" class="beer-track" role="region" aria-label="Perth craft beer listing">
-
+{%- set regionLabels = { "fremantle": "Fremantle", "swanvalley": "Swan Valley", "innercity": "Inner City", "coastal": "Coastal North" } %}
+{%- for beer in beers.items %}
         <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Single Fin</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Gage Roads Brew Co</p>
-          <span class="beer-card-type">Summer Ale</span>
-          <a href="https://gageroads.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
+          <span class="beer-card-region beer-card-region--{{ beer.region }}">{{ regionLabels[beer.region] }}</span>
+          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">{{ beer.name }}</h3>
+          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">{{ beer.brewery }}</p>
+          <span class="beer-card-type">{{ beer.type }}</span>
+          <a href="{{ beer.link }}" target="_blank" rel="noopener noreferrer" class="beer-card-link">
             Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
           </a>
         </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pipe Dreams</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Gage Roads Brew Co</p>
-          <span class="beer-card-type">Coastal Lager</span>
-          <a href="https://gageroads.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Side Track</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Gage Roads Brew Co</p>
-          <span class="beer-card-type">All Day XPA</span>
-          <a href="https://gageroads.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pale Ale</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Little Creatures Brewing</p>
-          <span class="beer-card-type">Pale Ale</span>
-          <a href="https://www.littlecreatures.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Festive</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Otherside Brewing Co</p>
-          <span class="beer-card-type">Pale Ale</span>
-          <a href="https://othersidebrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Thieves Lager</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Running With Thieves</p>
-          <span class="beer-card-type">Lager</span>
-          <a href="https://runningwiththieves.com" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--fremantle">Fremantle</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Chief IPA</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">The Monk Craft Brewery</p>
-          <span class="beer-card-type">IPA</span>
-          <a href="https://www.themonk.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Hop Hog</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Feral Brewing Co</p>
-          <span class="beer-card-type">American Pale Ale</span>
-          <a href="https://www.feralbrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Copy Cat</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Mash Brewing</p>
-          <span class="beer-card-type">American IPA</span>
-          <a href="https://www.mashbrewing.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pilsner</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Valley Social</p>
-          <span class="beer-card-type">German Pilsner</span>
-          <a href="https://www.valleysocial.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--swanvalley">Swan Valley</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Pale Ale</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Bailey Brewing Co</p>
-          <span class="beer-card-type">Pale Ale</span>
-          <a href="https://www.baileybrewingco.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--innercity">Inner City</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Indian Ocean Ale</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Blasta Brewing Co</p>
-          <span class="beer-card-type">Australian Pale Ale</span>
-          <a href="https://www.blastabrewing.com" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--innercity">Inner City</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Beerland Wheat</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Northbridge Brewing Co</p>
-          <span class="beer-card-type">Wheat Beer</span>
-          <a href="https://www.northbridgebrewingco.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
-        <article class="beer-card">
-          <span class="beer-card-region beer-card-region--coastal">Coastal North</span>
-          <h3 class="font-display font-bold text-2xl text-roast mt-3 mb-1">Half Mast</h3>
-          <p class="font-text text-sm uppercase tracking-wide text-roast/60 mb-3">Indian Ocean Brewing Co</p>
-          <span class="beer-card-type">Mid-Strength Lager</span>
-          <a href="https://theiobc.com.au" target="_blank" rel="noopener noreferrer" class="beer-card-link">
-            Visit Brewery <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </article>
-
+{%- endfor %}
       </div>
     </div>
   </section>
@@ -487,46 +358,16 @@
 
         <div>
           <ol class="mb-9">
-            <li class="relative flex items-start gap-4 pb-7 before:content-[''] before:absolute before:left-3 before:top-8 before:bottom-0 before:w-px before:bg-roast/15">
-              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">1</span>
+{%- for stop in trail.items %}
+            <li class="relative flex items-start gap-4 pb-7{% if not loop.last %} before:content-[''] before:absolute before:left-3 before:top-8 before:bottom-0 before:w-px before:bg-roast/15{% endif %}">
+              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">{{ loop.index }}</span>
               <div>
-                <p class="font-display font-bold text-roast text-lg leading-snug">Homestead Brewery</p>
-                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">Caversham · Mandoon Estate</p>
-                <p class="font-body text-roast/65 text-sm">Best for: breakfast &amp; a refined vibe</p>
+                <p class="font-display font-bold text-roast text-lg leading-snug">{{ stop.name }}</p>
+                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">{{ stop.place }}</p>
+                <p class="font-body text-roast/65 text-sm">{{ stop.bestFor }}</p>
               </div>
             </li>
-            <li class="relative flex items-start gap-4 pb-7 before:content-[''] before:absolute before:left-3 before:top-8 before:bottom-0 before:w-px before:bg-roast/15">
-              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">2</span>
-              <div>
-                <p class="font-display font-bold text-roast text-lg leading-snug">Mash Brewing</p>
-                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">Henley Brook</p>
-                <p class="font-body text-roast/65 text-sm">Best for: award-winning IPAs &amp; a pub lunch</p>
-              </div>
-            </li>
-            <li class="relative flex items-start gap-4 pb-7 before:content-[''] before:absolute before:left-3 before:top-8 before:bottom-0 before:w-px before:bg-roast/15">
-              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">3</span>
-              <div>
-                <p class="font-display font-bold text-roast text-lg leading-snug">Funk Brewshed</p>
-                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">Henley Brook</p>
-                <p class="font-body text-roast/65 text-sm">Best for: wild ferments, cider &amp; non-beer drinkers</p>
-              </div>
-            </li>
-            <li class="relative flex items-start gap-4 pb-7 before:content-[''] before:absolute before:left-3 before:top-8 before:bottom-0 before:w-px before:bg-roast/15">
-              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">4</span>
-              <div>
-                <p class="font-display font-bold text-roast text-lg leading-snug">Txoko Brewing</p>
-                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">Baskerville</p>
-                <p class="font-body text-roast/65 text-sm">Best for: rustic charm &amp; wood-fired pizzas</p>
-              </div>
-            </li>
-            <li class="relative flex items-start gap-4 pb-7">
-              <span class="relative z-10 flex-shrink-0 w-6 text-center font-display font-bold text-2xl leading-none text-rust-500">5</span>
-              <div>
-                <p class="font-display font-bold text-roast text-lg leading-snug">Baskerville Tavern</p>
-                <p class="font-text text-[11px] uppercase tracking-wide text-roast/40 mb-1">Baskerville · home of Slumdog Brewing</p>
-                <p class="font-body text-roast/65 text-sm">Best for: the final icon — Feral's Biggie Juice &amp; Hop Hog, still on tap</p>
-              </div>
-            </li>
+{%- endfor %}
           </ol>
 
           <form id="subscribeForm" class="max-w-md" novalidate>
