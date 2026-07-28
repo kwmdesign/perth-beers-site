@@ -104,6 +104,13 @@
       "type": "Lager",
       "link": "https://spinifexbrewery.com.au/",
       "region": "southperth"
+    },
+    {
+      "link": "https://www.txoko.com.au/",
+      "name": "Luna Pale Ale",
+      "brewery": "Txoko Brewing",
+      "region": "coastal",
+      "type": "Pale Ale"
     }
   ]
 }
