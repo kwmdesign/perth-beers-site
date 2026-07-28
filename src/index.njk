@@ -161,8 +161,8 @@
 {%- for beer in beers.items %}
     <a class="beer" data-r="{{ beer.region }}" data-hover href="{{ beer.link }}" target="_blank" rel="noopener noreferrer">
       <span class="rg {{ beer.region }}">{{ regionLabels[beer.region] }}</span>
-      <h3>{{ beer.name }}</h3>
-      <p class="brew">{{ beer.brewery }}</p>
+      <h3>{{ beer.brewery }}</h3>
+      <p class="brew">{{ beer.name }}</p>
       <span class="style">{{ beer.type }}</span>
       <div class="go"><span>Visit brewery</span><span class="arrow">→</span></div>
     </a>
