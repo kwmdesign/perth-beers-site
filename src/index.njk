@@ -150,13 +150,14 @@
   <div class="filters reveal" role="group" aria-label="Filter beers by region">
     <button class="on" data-f="all" data-hover>All patches</button>
     <button data-f="fremantle" data-hover>Fremantle</button>
+    <button data-f="southperth" data-hover>South Perth</button>
     <button data-f="swanvalley" data-hover>Swan Valley</button>
     <button data-f="innercity" data-hover>Inner City</button>
     <button data-f="coastal" data-hover>Coastal North</button>
   </div>
 
   <div class="beer-grid" id="grid">
-{%- set regionLabels = { "fremantle": "Fremantle", "swanvalley": "Swan Valley", "innercity": "Inner City", "coastal": "Coastal North" } %}
+{%- set regionLabels = { "fremantle": "Fremantle", "southperth": "South Perth", "swanvalley": "Swan Valley", "innercity": "Inner City", "coastal": "Coastal North" } %}
 {%- for beer in beers.items %}
     <a class="beer" data-r="{{ beer.region }}" data-hover href="{{ beer.link }}" target="_blank" rel="noopener noreferrer">
       <span class="rg {{ beer.region }}">{{ regionLabels[beer.region] }}</span>

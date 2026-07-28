@@ -36,6 +36,7 @@ collections:
                 widget: select
                 options:
                   - { label: "Fremantle", value: "fremantle" }
+                  - { label: "South Perth", value: "southperth" }
                   - { label: "Swan Valley", value: "swanvalley" }
                   - { label: "Inner City", value: "innercity" }
                   - { label: "Coastal North", value: "coastal" }

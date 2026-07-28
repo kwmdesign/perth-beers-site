@@ -269,6 +269,7 @@ section.block{padding:clamp(80px,12vh,150px) clamp(20px,4vw,56px)}
   padding:6px 12px;border-radius:2px;margin-bottom:18px;
 }
 .beer .rg.fremantle{background:rgba(228,34,61,.1);color:var(--red-deep)}
+.beer .rg.southperth{background:rgba(13,110,90,.12);color:#0E6E5A}
 .beer .rg.swanvalley{background:rgba(232,163,61,.14);color:var(--amber-deep)}
 .beer .rg.innercity{background:rgba(13,13,13,.08);color:var(--ink)}
 .beer .rg.coastal{background:rgba(13,13,13,.05);color:rgba(13,13,13,.6)}
