@@ -111,6 +111,13 @@
       "brewery": "Txoko Brewing",
       "region": "swanvalley",
       "type": "Pale Ale"
+    },
+    {
+      "brewery": "Funk Brewshed",
+      "link": "https://funkdrinks.co/pages/brewshed",
+      "name": "FUNK BLACK",
+      "region": "swanvalley",
+      "type": "Dark Ale"
     }
   ]
 }
