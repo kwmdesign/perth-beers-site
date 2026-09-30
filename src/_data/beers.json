@@ -104,6 +104,13 @@
       "name": "FUNK BLACK",
       "region": "swanvalley",
       "type": "Dark Ale"
+    },
+    {
+      "name": "Maintain The Rage",
+      "brewery": "Feral Brewing Co",
+      "type": "Modern IPA",
+      "link": "https://feralbrewing.com.au/",
+      "region": "innercity"
     }
   ]
 }
