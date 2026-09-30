@@ -111,6 +111,13 @@
       "type": "Modern IPA",
       "link": "https://feralbrewing.com.au/",
       "region": "innercity"
+    },
+    {
+      "name": "WAR HOG",
+      "link": "https://feralbrewing.com.au/",
+      "region": "innercity",
+      "type": "WEST COAST IPA",
+      "brewery": "Feral Brewing Co"
     }
   ]
 }
