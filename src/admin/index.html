@@ -9,5 +9,95 @@
 <body>
   <!-- Decap CMS: the editing interface. Loads from CDN; reads config.yml alongside this file. -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!--
+    Live preview for the Beers collection: as you add/edit a beer, this
+    renders the actual beer-grid card using the real site fonts and CSS
+    (copied from src/css/site.css — .beer / .rg / .beer-grid rules), so
+    you see exactly how it'll look on perthbeers.au instead of a blank form.
+  -->
+  <script>
+    CMS.registerPreviewStyle(
+      "https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&f[]=excon@400,500,600,700&display=swap"
+    );
+    CMS.registerPreviewStyle(
+      "\
+      :root{--ink:#0D0D0D;--sand:#F5F0E6;--red-deep:#C01C33;--amber-deep:#C9821F}\
+      *{margin:0;padding:0;box-sizing:border-box}\
+      body{font-family:'Excon',sans-serif;background:var(--sand)}\
+      .preview-wrap{padding:28px 22px;min-height:100vh}\
+      .preview-kicker{font-family:'General Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(13,13,13,.5);margin-bottom:18px}\
+      .beer-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}\
+      .beer{position:relative;background:#fff;border-radius:4px;padding:26px 22px 22px;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(13,13,13,.08)}\
+      .beer.is-new{outline:2px dashed var(--red-deep);outline-offset:4px}\
+      .beer .rg{display:inline-block;font-family:'General Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:2px;margin-bottom:16px}\
+      .beer .rg.fremantle{background:rgba(228,34,61,.1);color:var(--red-deep)}\
+      .beer .rg.southperth{background:rgba(13,110,90,.12);color:#0E6E5A}\
+      .beer .rg.swanvalley{background:rgba(232,163,61,.14);color:var(--amber-deep)}\
+      .beer .rg.innercity{background:rgba(13,13,13,.08);color:var(--ink)}\
+      .beer .rg.coastal{background:rgba(13,13,13,.05);color:rgba(13,13,13,.6)}\
+      .beer .rg.placeholder{background:rgba(13,13,13,.06);color:rgba(13,13,13,.35)}\
+      .beer h3{font-family:'General Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.1}\
+      .beer h3.placeholder{color:rgba(13,13,13,.3);font-weight:500;font-style:italic}\
+      .beer .brew{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(13,13,13,.5);margin:8px 0 16px}\
+      .beer .style{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(13,13,13,.55);border:1px solid rgba(13,13,13,.18);padding:5px 11px;border-radius:2px}\
+      .beer .go{margin-top:20px;padding-top:16px;border-top:1px solid rgba(13,13,13,.1);display:flex;align-items:center;justify-content:space-between;font-family:'General Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--red-deep)}\
+      ",
+      { raw: true }
+    );
+
+    var regionLabels = {
+      fremantle: "Fremantle",
+      southperth: "South Perth",
+      swanvalley: "Swan Valley",
+      innercity: "Inner City",
+      coastal: "Coastal North",
+    };
+
+    var BeerlistPreview = createClass({
+      render: function () {
+        var entry = this.props.entry;
+        var items = entry.getIn(["data", "items"]) || [];
+
+        var cards = items
+          .map(function (beer, i) {
+            var name = beer.get("name");
+            var brewery = beer.get("brewery");
+            var type = beer.get("type");
+            var region = beer.get("region");
+            var hasRegion = !!region;
+
+            return h(
+              "div",
+              { className: "beer", key: i },
+              h(
+                "span",
+                { className: "rg " + (hasRegion ? region : "placeholder") },
+                hasRegion ? regionLabels[region] || region : "No region set"
+              ),
+              h("h3", { className: brewery ? "" : "placeholder" }, brewery || "Brewery name"),
+              h("p", { className: "brew" }, name || "Beer name"),
+              h("span", { className: "style" }, type || "Style"),
+              h(
+                "div",
+                { className: "go" },
+                h("span", {}, "Visit brewery"),
+                h("span", {}, "→")
+              )
+            );
+          })
+          .toArray();
+
+        return h(
+          "div",
+          { className: "preview-wrap" },
+          h("p", { className: "preview-kicker" }, "On Tap Across Perth — live preview"),
+          h("div", { className: "beer-grid" }, cards)
+        );
+      },
+    });
+
+    CMS.registerPreviewTemplate("beers", BeerlistPreview);
+  </script>
 </body>
 </html>

@@ -12,6 +12,14 @@ backend:
 media_folder: "src/assets"
 public_folder: "/assets"
 
+# Branding: shows the real Perth Beers logo in the CMS header, and adds a
+# "View Site" link back to the live site in the top bar.
+site_url: "https://www.perthbeers.au/"
+display_url: "https://www.perthbeers.au/"
+logo:
+  src: "/assets/perth-beers-logo.png"
+  show_in_header: true
+
 collections:
   # ---------- BEERS ----------
   - name: "beers"
@@ -28,19 +36,33 @@ collections:
             widget: list
             summary: "{{fields.name}} — {{fields.brewery}}"
             fields:
-              - { name: name, label: "Beer Name", widget: string }
-              - { name: brewery, label: "Brewery", widget: string }
-              - { name: type, label: "Beer Type / Style", widget: string }
+              - name: name
+                label: "Beer Name"
+                widget: string
+                hint: "The specific beer, e.g. \"Single Fin\" — not the brewery."
+              - name: brewery
+                label: "Brewery"
+                widget: string
+                hint: "Who brews it, e.g. \"Gage Roads Brew Co\"."
+              - name: type
+                label: "Beer Type / Style"
+                widget: string
+                hint: "e.g. Pale Ale, IPA, Lager, Wheat Beer, Pilsner."
               - name: region
                 label: "Region"
                 widget: select
+                hint: "Which patch it's grouped under on the site's filter buttons."
                 options:
                   - { label: "Fremantle", value: "fremantle" }
                   - { label: "South Perth", value: "southperth" }
                   - { label: "Swan Valley", value: "swanvalley" }
                   - { label: "Inner City", value: "innercity" }
                   - { label: "Coastal North", value: "coastal" }
-              - { name: link, label: "Brewery Website (https://...)", widget: string }
+              - name: link
+                label: "Brewery Website"
+                widget: string
+                hint: "Full URL starting with https:// — this is where the card links out to."
+                pattern: ['^https://.+', "Must start with https://"]
 
   # ---------- SWAN VALLEY TRAIL ----------
   - name: "trail"
