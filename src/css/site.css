@@ -413,6 +413,59 @@ footer{
 .dot.big{width:44px;height:44px;background:rgba(228,34,61,.25);backdrop-filter:blur(1px)}
 @media(hover:none){.dot{display:none}}
 
+/* ---------- instagram follow band ---------- */
+.insta{
+  position:relative;overflow:hidden;
+  background:var(--red);color:var(--sand);
+  padding:clamp(80px,12vh,140px) clamp(20px,4vw,56px);
+  text-align:center;
+}
+.insta-ring{
+  position:absolute;left:50%;top:50%;
+  width:min(90vw,760px);height:min(90vw,760px);
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:2px solid rgba(13,13,13,.16);
+  box-shadow:0 0 0 60px rgba(13,13,13,.05), 0 0 0 130px rgba(13,13,13,.035);
+  pointer-events:none;
+}
+.insta-inner{position:relative;z-index:2;max-width:760px;margin:0 auto}
+.insta-kicker{
+  font-size:12px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--sand);opacity:.85;margin-bottom:22px;
+}
+.insta-handle{
+  font-family:'General Sans',sans-serif;font-weight:700;
+  font-size:clamp(38px,9vw,104px);line-height:1;letter-spacing:-.02em;
+  text-transform:uppercase;
+  overflow-wrap:anywhere;
+}
+.insta-sub{
+  margin:26px auto 0;max-width:520px;
+  font-size:16px;line-height:1.65;color:rgba(245,240,230,.9);
+}
+.insta-btn{
+  display:inline-flex;align-items:center;gap:12px;margin-top:38px;
+  background:var(--ink);color:var(--sand);text-decoration:none;
+  font-family:'General Sans',sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  padding:20px 34px;border-radius:2px;
+  transition:transform .3s cubic-bezier(.2,.9,.3,1.4),background .3s,color .3s;
+}
+.insta-btn svg{width:20px;height:20px;flex-shrink:0}
+.insta-btn:hover{transform:translateY(-3px);background:var(--sand);color:var(--ink)}
+.insta-btn:focus-visible{outline:2px solid var(--sand);outline-offset:4px}
+.insta-points{
+  list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:12px 34px;
+  margin-top:44px;
+}
+.insta-points li{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(245,240,230,.85);
+  display:flex;align-items:center;gap:10px;
+}
+.insta-points li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ink)}
+.foot-link{color:inherit;text-decoration:none;border-bottom:1px solid rgba(245,240,230,.3);transition:color .3s,border-color .3s}
+.foot-link:hover{color:var(--sand);border-color:var(--red)}
+
 /* ---------- reduced motion ---------- */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
