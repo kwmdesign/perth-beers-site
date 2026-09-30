@@ -118,6 +118,13 @@
       "region": "innercity",
       "type": "WEST COAST IPA",
       "brewery": "Feral Brewing Co"
+    },
+    {
+      "name": "Munich Helles",
+      "brewery": "Ripple Brewing",
+      "type": "Pale Czech Lager",
+      "link": "https://www.ripplebrewing.com.au/",
+      "region": "southperth"
     }
   ]
 }
